@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/app/components/Navbar.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1725912322787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725912335070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,11 @@\n-rp\n\\ No newline at end of file\n+import React, { PureComponent } from 'react'\n+\n+export class Navbar extends PureComponent {\n+  render() {\n+    return (\n+      <div>Navbar</div>\n+    )\n+  }\n+}\n+\n+export default Navbar\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725912343870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,1 @@\n-import React, { PureComponent } from 'react'\n-\n-export class Navbar extends PureComponent {\n-  render() {\n-    return (\n-      <div>Navbar</div>\n-    )\n-  }\n-}\n-\n-export default Navbar\n\\ No newline at end of file\n+rp\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1725912471784,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,25 @@\n-rp\n\\ No newline at end of file\n+import React from 'react';\n+import Link from 'next/link';\n+\n+const Navbar = () => {\n+  return (\n+    <nav className=\"bg-gray-800 p-4\">\n+      <ul className=\"flex space-x-6\">\n+        <li>\n+          <Link href=\"/\" className=\"text-white hover:text-gray-300\">Home</Link>\n+        </li>\n+        <li>\n+          <Link href=\"/about\" className=\"text-white hover:text-gray-300\">About</Link>\n+        </li>\n+        <li>\n+          <Link href=\"/services\" className=\"text-white hover:text-gray-300\">Services</Link>\n+        </li>\n+        <li>\n+          <Link href=\"/contact\" className=\"text-white hover:text-gray-300\">Contact</Link>\n+        </li>\n+      </ul>\n+    </nav>\n+  );\n+};\n+\n+export default Navbar;\n"
+                }
+            ],
+            "date": 1725912322787,
+            "name": "Commit-0",
+            "content": "rp"
+        }
+    ]
+}
