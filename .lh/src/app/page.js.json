@@ -1,0 +1,42 @@
+{
+    "sourceFile": "src/app/page.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1725912547244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1725912560898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import Image from \"next/image\";\n-import \n+import Navbar from \"./components/Navbar\";\n export default function Home() {\n   return(\n     <>\n-    hi there \n+    <hi there >\n     </>\n \n   );\n \n"
+                },
+                {
+                    "date": 1725912568947,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import Navbar from \"./components/Navbar\";\n export default function Home() {\n   return(\n     <>\n-    <hi there >\n+    < Navbar />\n     </>\n \n   );\n \n"
+                },
+                {
+                    "date": 1725912576352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import Navbar from \"./components/Navbar\";\n export default function Home() {\n   return(\n     <>\n+    \n     < Navbar />\n     </>\n \n   );\n"
+                },
+                {
+                    "date": 1725912582154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import Navbar from \"./components/Navbar\";\n export default function Home() {\n   return(\n     <>\n-    \n+    <div></div>\n     < Navbar />\n     </>\n \n   );\n"
+                },
+                {
+                    "date": 1725912590443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,12 @@\n import Navbar from \"./components/Navbar\";\n export default function Home() {\n   return(\n     <>\n-    <div></div>\n-    < Navbar />\n+    <div>\n+\n+    </div>\n+    \n     </>\n \n   );\n \n"
+                },
+                {
+                    "date": 1725912599554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,11 +3,10 @@\n export default function Home() {\n   return(\n     <>\n     <div>\n-\n+    < Navbar />\n     </div>\n-    \n     </>\n \n   );\n \n"
+                }
+            ],
+            "date": 1725912547244,
+            "name": "Commit-0",
+            "content": "import Image from \"next/image\";\nimport \nexport default function Home() {\n  return(\n    <>\n    hi there \n    </>\n\n  );\n\n}\n"
+        }
+    ]
+}
