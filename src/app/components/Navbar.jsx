@@ -14,7 +14,11 @@ const Navlinks = [
         link: "/"
     },
     {
-        name: "Contact",
+        name: "Impact",
+        link: "/"
+    },
+    {
+        name: "Metrics",
         link: "/"
     },
 ]
@@ -29,9 +33,15 @@ export default function Navbar() {
                     {
                         Navlinks.map((link, index) => {
                             return (
-                                <Link className="rounded-[2rem] items-center justify-center relative py-3 w-full"
-                                      key={index} href={link.link}
-                                      onClick={() => setActiveIndex(index)}><span>{link.name}</span>
+                                <Link
+                                    className="rounded-[2rem] items-center justify-center relative py-3 w-full font-main font-semibold"
+                                    key={index} href={link.link}
+                                    onClick={() => setActiveIndex(index)}>
+                                    <motion.span
+                                        initial={{color: "#000"}}
+                                        animate={index === activeIndex ? { color: "#fff" } : { color: "#000" }}
+                                        transition={{ duration: 0.3 }}
+                                    >{link.name}</motion.span>
                                     {
                                         index === activeIndex && (
                                             <motion.div
@@ -44,7 +54,7 @@ export default function Navbar() {
                                                     type: "tween",
                                                     duration: 0.3,
                                                 }}
-                                                className="bg-green-500 absolute h-full rounded-[2rem] left-0 bottom-0 -z-10"/>
+                                                className="bg-[#536e59] absolute h-full rounded-[2rem] left-0 bottom-0 -z-10"/>
                                         )
                                     }
                                 </Link>

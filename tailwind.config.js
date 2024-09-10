@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        main: ["var(--font-ubuntu)"]
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
