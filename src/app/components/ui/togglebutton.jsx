@@ -45,5 +45,3 @@ export default function ToggleButton({ isOpen, setIsOpen}) {
         </button>
     );
 };
-
-ToggleButton;
