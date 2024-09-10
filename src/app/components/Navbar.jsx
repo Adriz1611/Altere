@@ -36,7 +36,8 @@ export default function Navbar() {
                 <Image src="/nav-log.png" alt="logo" height={150} width={150}
                        className="py-2 px-4 col-span-1 block md:hidden"/>
                 <div
-                    className="flex flex-col absolute top-20 left-0 px-4 md:px-0 md:top-0 md:flex-row items-center justify-evenly w-full text-center md:relative z-[100] ">
+                    className="flex flex-col absolute top-20 left-0 px-4 md:px-0 md:top-0 md:flex-row items-center justify-evenly w-full text-center md:relative z-[100] "
+                >
                     {
                         Navlinks.map((link, index) => {
                             return (
@@ -72,7 +73,6 @@ export default function Navbar() {
                 </div>
                 <ToggleButton isOpen={active} setIsOpen={setActive}/>
             </nav>
-
         </header>
     )
 }
