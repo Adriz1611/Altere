@@ -23,7 +23,7 @@ const Navlinks = [
         link: "/"
     },
 ]
-// navbar func
+
 export default function Navbar() {
     const [activeIndex, setActiveIndex] = useState(0)
     const [active, setActive] = useState(false)
