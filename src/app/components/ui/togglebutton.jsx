@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 
 export default function ToggleButton({ isOpen, setIsOpen}) {
 
-
     const toggleOpen = () => setIsOpen(!isOpen);
 
     return (
