@@ -11,23 +11,23 @@ export default function ToggleButton({ isOpen, setIsOpen}) {
     return (
         <button
             onClick={toggleOpen}
-            className="w-12 h-12 rounded-full border flex items-center justify-center focus:outline-none md:hidden"
+            className="w-12 h-12 rounded-full flex items-center justify-center focus:outline-none md:hidden"
         >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <motion.path
                     stroke="#000000"
                     strokeWidth="2"
                     strokeLinecap="round"
-                    d="M 2 2.5 L 20 2.5"
+                    d="M 4 6 L 20 6"
                     animate={{
-                        d: isOpen ? "M 3 16.5 L 17 2.5" : "M 2 2.5 L 20 2.5",
+                        d: isOpen ? "M 6 18 L 18 6" : "M 4 6 L 20 6",
                     }}
                 />
                 <motion.path
                     stroke="#000000"
                     strokeWidth="2"
                     strokeLinecap="round"
-                    d="M 2 9.423 L 20 9.423"
+                    d="M 4 12 L 20 12"
                     animate={{
                         opacity: isOpen ? 0 : 1,
                         x: isOpen ? 20 : 0,
@@ -37,9 +37,9 @@ export default function ToggleButton({ isOpen, setIsOpen}) {
                     stroke="#000000"
                     strokeWidth="2"
                     strokeLinecap="round"
-                    d="M 2 16.346 L 20 16.346"
+                    d="M 4 18 L 20 18"
                     animate={{
-                        d: isOpen ? "M 3 2.5 L 17 16.346" : "M 2 16.346 L 20 16.346",
+                        d: isOpen ? "M 6 6 L 18 18" : "M 4 18 L 20 18",
                     }}
                 />
             </svg>

@@ -36,7 +36,10 @@ export default function Navbar() {
                 <Image src="/nav-log.png" alt="logo" height={150} width={150}
                        className="py-2 px-4 col-span-1 block md:hidden"/>
                 <div
-                    className="flex flex-col absolute top-20 left-0 px-4 md:px-0 md:top-0 md:flex-row items-center justify-evenly w-full text-center md:relative z-[100] "
+                    className={`flex-col absolute top-24 left-0 px-4 md:px-0 md:top-0 md:flex-row items-center justify-evenly w-full text-center md:relative z-[100] 
+                    ${active ? "flex" : "hidden md:flex"}
+                    `}
+
                 >
                     {
                         Navlinks.map((link, index) => {
