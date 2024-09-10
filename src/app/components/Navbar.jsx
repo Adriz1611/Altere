@@ -24,6 +24,8 @@ const Navlinks = [
     },
 ]
 
+// hi there
+
 export default function Navbar() {
     const [activeIndex, setActiveIndex] = useState(0)
     const [active, setActive] = useState(false)
