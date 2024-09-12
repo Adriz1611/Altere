@@ -21,7 +21,7 @@ export default function Navbar() {
             <motion.div
                 className="col-span-1 hidden md:block"
                 initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 0, y: 0 }}
                 transition={{ duration: 0.5 }}
             >
                 <Image src="/nav-log.png" alt="logo" height={150} width={150} className="py-2 px-4" />
@@ -35,7 +35,7 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    {/* <Image src="/nav-log.png" alt="logo" height={150} width={150} className="py-2 px-4" /> */}
+                    <Image src="/nav-log.png" alt="logo" height={150} width={150} className="py-2 px-4" />
                 </motion.div>
                 <div
                     className={`absolute top-24 left-0 px-4 md:px-0 md:top-0 md:flex-row items-center justify-evenly w-full text-center md:relative z-[100]
