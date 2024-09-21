@@ -33,7 +33,7 @@ export default function Home() {
             animate={{ rotate: 0, opacity: 1 }}
             transition={{ delay: 0.7, type: "spring", stiffness: 100 }}
           >
-            <img
+            <Image
               src="/green-bin-icon.png"
               alt="Green bin"
               className="w-16 h-16 inline"
@@ -123,7 +123,7 @@ export default function Home() {
         </motion.div>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="flex bg-black text-white p-8 rounded-lg"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
