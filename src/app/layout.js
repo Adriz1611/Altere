@@ -1,4 +1,3 @@
-import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/app/components/Navbar";
 import {Ubuntu} from "next/font/google";
