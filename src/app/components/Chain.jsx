@@ -24,25 +24,25 @@ const StaticFoodRecyclingInfographic = () => {
   };
 
   return (
-    <div className="bg-white p-8 w-full min-h-screen mt-20">
-      <h2 className="text-3xl font-bold text-center text-green-700 pb-36">FOOD RECYCLING</h2>
+    <div className="bg-white p-8 w-full min-h-screen ">
+      <h2 className="text-4xl font-bold text-center text-green-700 mt-24">FOOD RECYCLING</h2>
       
-      <div className="relative w-80 h-80 mx-auto mb-12">
+      <div className="relative w-96 h-96 mx-auto mt-56 ">
         {items.map((item, index) => (
           <div
             key={index}
             className={`absolute ${getPosition(item.position)} flex flex-col items-center text-center`}
           >
-            <div className="bg-green-700 p-3 rounded-full mb-2">
-              <item.icon className="w-8 h-8 text-white" />
+            <div className="bg-green-700 p-5 rounded-full mb-3">
+              <item.icon className="w-10 h-10 text-white" />
             </div>
-            <p className="font-bold text-sm mb-1">{item.title}</p>
-            {item.subtitle && <p className="font-bold text-sm">{item.subtitle}</p>}
+            <p className="font-bold text-lg mb-1">{item.title}</p>
+            {item.subtitle && <p className="font-bold text-lg">{item.subtitle}</p>}
           </div>
         ))}
         
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-          <p className="text-2xl font-bold text-green-700">AlteRe</p>
+          <p className="text-3xl font-bold text-green-700">AlteRe</p>
         </div>
       </div>
     </div>
