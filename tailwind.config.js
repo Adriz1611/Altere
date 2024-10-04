@@ -9,7 +9,8 @@ module.exports = {
     extend: {
 
       fontFamily: {
-        main: ["var(--font-ubuntu)"]
+        main: ["var(--font-ubuntu)"],
+        heading: ["var(--font-jost)"],
       },
       colors: {
         colors: {
