@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { About } from "@/app/components/About";
 import FoodRecyclingSlider from "@/app/components/Chain";
 import Cursor from "./components/Cursor";
+import MarqueeSection from "@/app/components/Marquee";
 
 // Define motion variants for animations
 const textVariants = {
@@ -24,11 +25,11 @@ export default function Home() {
       <Cursor />
       <section
         id="hero"
-        className="flex flex-row justify-between items-center px-60 py-20 relative h-screen "
+        className="flex flex-col lg:flex-row justify-between items-center px-8 md:px-20 lg:px-60 py-20 relative h-screen "
       >
         {/* Apply motion to text */}
         <motion.h1
-          className="text-[4rem] font-bold w-2/4 font-heading text-7xl leading-[89px] text-black"
+          className="text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] font-bold w-full md:w-3/4 lg:w-2/4 font-heading leading-tight md:leading-[75px] lg:leading-[89px] text-black"
           initial="hidden"
           animate="visible"
           variants={textVariants}
@@ -51,6 +52,7 @@ export default function Home() {
             layout="fill"
             objectFit="cover"
             quality={100}
+            className="object-cover"
           />
         </motion.div>
       </section>
@@ -59,6 +61,7 @@ export default function Home() {
         <About />
       </motion.section>
       <FoodRecyclingSlider />
+      <MarqueeSection />
     </main>
   );
 }
