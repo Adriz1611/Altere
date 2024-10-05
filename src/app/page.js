@@ -26,7 +26,7 @@ export default function Home() {
       <Cursor />
       <section
         id="hero"
-        className="flex flex-col lg:flex-row justify-between items-center px-8 md:px-20 lg:px-60 py-20 relative h-screen mt-4 "
+        className="flex flex-col lg:flex-row justify-between items-center px-8 md:px-20 lg:px-60 py-20 relative h-screen mt-4 md:mt-8 "
       >
         {/* Apply motion to text */}
         <motion.h1

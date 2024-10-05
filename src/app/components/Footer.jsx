@@ -20,7 +20,7 @@ export default function Footer() {
                     <p>
                         Designed by{" "}
                         <a href="#" className="text-colors-secondary-500 hover:underline">
-                            SYNAR Technology
+                            FireDevs
                         </a>
                     </p>
                     <div className="flex space-x-4">

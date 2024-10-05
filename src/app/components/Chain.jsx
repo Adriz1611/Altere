@@ -13,7 +13,7 @@ const StaticFoodRecyclingInfographic = () => {
 
   const getPosition = (position) => {
     switch(position) {
-      case 'top': return 'top-0 left-1/2 -translate-x-1/2 -translate-y-full';
+      case 'top': return 'top-16 sm:top-0 md:top-0 left-1/2 -translate-x-1/2 -translate-y-full';
       case 'top-left': return 'top-1/4 left-0 -translate-x-full -translate-y-1/2';
       case 'top-right': return 'top-1/4 right-0 translate-x-full -translate-y-1/2';
       case 'bottom-left': return 'bottom-1/4 left-0 -translate-x-full translate-y-1/2';
@@ -24,10 +24,10 @@ const StaticFoodRecyclingInfographic = () => {
   };
 
   return (
-    <div className="bg-blue-300 p-8 w-full min-h-screen ">
-      <h2 className="text-2xl md:text-4xl font-bold text-center text-green-700 mt-12 md:mt-24">FOOD RECYCLING</h2>
+    <div className="bg-blue-300 p-4 md:p-8 w-full min-h-screen">
+      <h2 className="text-2xl md:text-4xl font-bold text-center text-green-700 mt-10 md:mt-10">FOOD RECYCLING</h2>
       
-      <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 mx-auto mt-32 md:mt-56">
+      <div className="relative w-36 h-60 sm:w-80 sm:h-80 md:w-104 md:h-104 mx-auto mt-36 md:mt-60">
         {items.map((item, index) => (
           <div
             key={index}
