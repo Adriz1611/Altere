@@ -7,6 +7,7 @@ import { About } from "@/app/components/About";
 import FoodRecyclingSlider from "@/app/components/Chain";
 import Cursor from "./components/Cursor";
 import MarqueeSection from "@/app/components/Marquee";
+import ContactUs from "./components/ContactUS";
 
 // Define motion variants for animations
 const textVariants = {
@@ -62,6 +63,7 @@ export default function Home() {
       </motion.section>
       <FoodRecyclingSlider />
       <MarqueeSection />
+      <ContactUs />
     </main>
   );
 }

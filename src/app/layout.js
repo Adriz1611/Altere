@@ -1,35 +1,35 @@
 import "./globals.css";
 import Navbar from "@/app/components/Navbar";
-import {Ubuntu} from "next/font/google";
-import {Jost} from "next/font/google";
-
+import Footer from "./components/Footer";
+import { Ubuntu } from "next/font/google";
+import { Jost } from "next/font/google";
 
 const ubuntu = Ubuntu({
-    weight: ["300", "400", "500", "700"],
-    subsets: ["latin"],
-    variable: "--font-ubuntu",
-})
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+  variable: "--font-ubuntu",
+});
 
 const jost = Jost({
-    weight: ["300", "400", "500", "700"],
-    subsets: ["latin"],
-    variable: "--font-jost",
-})
+  weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
+  variable: "--font-jost",
+});
 
 export const metadata = {
-    title: "AlteRe",
-    description: "AlteRe is a platform for green solutions and urban waste challenges.",
+  title: "AlteRe",
+  description:
+    "AlteRe is a platform for green solutions and urban waste challenges.",
 };
 
-export default function RootLayout({children}) {
-    return (
-        <html lang="en">
-        <body
-            className={`${ubuntu.variable} ${jost.variable}`}
-        >
-        <Navbar/>
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <body className={`${ubuntu.variable} ${jost.variable}`}>
+        <Navbar />
         {children}
-        </body>
-        </html>
-    );
+        <Footer />
+      </body>
+    </html>
+  );
 }
