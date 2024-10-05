@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body {
+    cursor: none !important;
+}
 
 @layer base {
     :root {
@@ -65,6 +68,7 @@
         --accent-950: #01190f;
 
     }
+
     .dark {
         --text-50: #051506;
         --text-100: #0a290d;
