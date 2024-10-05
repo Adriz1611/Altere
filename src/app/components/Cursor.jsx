@@ -27,7 +27,7 @@ const Cursor = () => {
   return (
     <div 
       ref={cursorRef}
-      className="fixed top-0 left-0 w-5 h-5 bg-colors-green-main rounded-full pointer-events-none z-50"
+      className="md:fixed md:top-0 md:left-0 md:w-5 md:h-5 md:bg-colors-green-main md:rounded-full md:pointer-events-none md:z-50"
       style={{ transform: 'translate(-50%, -50%)' }}
     />
   );

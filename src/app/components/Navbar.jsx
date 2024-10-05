@@ -21,7 +21,7 @@ export default function Navbar() {
     };
 
     return (
-        <header className="shadow-[0px_5px_5px_0px_rgba(0,_0,_0,_0.22)] w-full fixed z-50 bg-white">
+        <header className="shadow-md w-full fixed z-50 bg-white">
             <nav className="flex justify-between items-center mx-4 lg:mx-64 py-4">
                 {/* Logo */}
                 <Image src="/nav-log.png" alt="AlteRe Logo" width={130} height={0} />
