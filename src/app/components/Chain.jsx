@@ -24,7 +24,7 @@ const StaticFoodRecyclingInfographic = () => {
   };
 
   return (
-    <div className="bg-blue-300 p-4 md:p-8 w-full min-h-screen">
+    <div className="bg-white p-4 md:p-8 w-full min-h-screen">
       <h2 className="text-2xl md:text-4xl font-bold text-center text-green-700 mt-10 md:mt-10">FOOD RECYCLING</h2>
       
       <div className="relative w-36 h-60 sm:w-80 sm:h-80 md:w-104 md:h-104 mx-auto mt-36 md:mt-60">

@@ -20,7 +20,7 @@ export const About = () => {
             whileInView="visible"
             viewport={{ once: true }}
             variants={variants}
-            className="w-[90%] md:w-[80%] min-h-screen bg-gray-500 flex flex-col md:flex-row items-center justify-center mx-auto">
+            className="w-[90%] md:w-[80%] min-h-screen bg-white flex flex-col md:flex-row items-center justify-center mx-auto">
             <Image 
                 src="/about-bg.png" 
                 alt="about" 
