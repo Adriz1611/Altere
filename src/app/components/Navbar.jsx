@@ -1,24 +1,44 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Menu, X } from "lucide-react"; // Import Lucide Icons for better mobile experience
 
 const Navlinks = [
-    { name: "Home", link: "/" },
-    { name: "About", link: "/about" },
-    { name: "Food Recycling", link: "/food-recycling" },
-    { name: "Feed Manufactures", link: "/feed-manufactures" },
-    { name: "Impact", link: "/impact" },
+    { name: "Home", link: "home" },
+    { name: "About", link: "about" },
+    { name: "Food Recycling", link: "food-recycling" },
+    { name: "Impact", link: "impact" },
 ];
 
 export default function Navbar() {
     const [active, setActive] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
 
-    // Toggle mobile menu
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
     const toggleMenu = () => {
         setActive(!active);
     };
+
+    const scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+            window.scrollTo({
+                top: sectionTop,
+                behavior: 'smooth'
+            });
+        }
+        setActive(false);
+    };
+
+    if (!isMounted) {
+        return null;
+    }
 
     return (
         <header className="shadow-md w-full fixed z-50 bg-white ">
@@ -31,8 +51,8 @@ export default function Navbar() {
                     {Navlinks.map((link) => (
                         <li key={link.name} className="relative group">
                             <a
-                                className="text-base font-medium relative overflow-hidden block transition-colors duration-300 ease-in-out hover:text-colors-secondary-500"
-                                href={link.link}
+                                className="text-base font-medium relative overflow-hidden block transition-colors duration-300 ease-in-out hover:text-colors-secondary-500 cursor-pointer"
+                                onClick={() => scrollToSection(link.link)}
                             >
                                 {link.name}
                                 {/* Hover underline animation */}
@@ -40,7 +60,10 @@ export default function Navbar() {
                             </a>
                         </li>
                     ))}
-                    <button className="bg-colors-secondary-500 py-3 px-5 rounded-xl text-white font-medium hover:bg-colors-secondary-600 transition-colors duration-300">
+                    <button 
+                        onClick={() => scrollToSection('contact')}
+                        className="bg-colors-secondary-500 py-3 px-5 rounded-xl text-white font-medium hover:bg-colors-secondary-600 transition-colors duration-300"
+                    >
                         Contact Us
                     </button>
                 </ul>
@@ -68,15 +91,17 @@ export default function Navbar() {
                         {Navlinks.map((link) => (
                             <li key={link.name} className="group">
                                 <a
-                                    className="text-lg font-medium block transition-colors duration-300 ease-in-out hover:text-colors-secondary-500"
-                                    href={link.link}
-                                    onClick={toggleMenu} // Close menu on click
+                                    className="text-lg font-medium block transition-colors duration-300 ease-in-out hover:text-colors-secondary-500 cursor-pointer"
+                                    onClick={() => scrollToSection(link.link)}
                                 >
                                     {link.name}
                                 </a>
                             </li>
                         ))}
-                        <button className="bg-colors-secondary-500 py-3 px-5 rounded-xl text-white font-medium hover:bg-colors-secondary-600 transition-colors duration-300">
+                        <button 
+                            onClick={() => scrollToSection('contact')}
+                            className="bg-colors-secondary-500 py-3 px-5 rounded-xl text-white font-medium hover:bg-colors-secondary-600 transition-colors duration-300"
+                        >
                             Contact Us
                         </button>
                     </ul>

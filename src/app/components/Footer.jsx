@@ -2,8 +2,28 @@
 
 import Image from "next/image";
 import { ArrowUpCircle, Twitter, Facebook, Instagram, Linkedin } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Footer() {
+    const [showScrollButton, setShowScrollButton] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 100) {
+                setShowScrollButton(true);
+            } else {
+                setShowScrollButton(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -71,13 +91,21 @@ export default function Footer() {
                 </div>
 
                 {/* Scroll to Top Button */}
-                <button
-                    className="fixed bottom-6 right-6 bg-colors-secondary-500 text-white p-3 rounded-full shadow-lg hover:bg-colors-secondary-600 transition duration-300 focus:ring-4 focus:ring-colors-secondary-300"
-                    onClick={scrollToTop}
-                    aria-label="Scroll to top"
-                >
-                    <ArrowUpCircle className="w-6 h-6" />
-                </button>
+                <AnimatePresence>
+                    {showScrollButton && (
+                        <motion.button
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 20 }}
+                            transition={{ duration: 0.3 }}
+                            className="fixed bottom-6 right-6 bg-colors-secondary-500 text-white p-3 rounded-full shadow-lg hover:bg-colors-secondary-600 transition duration-300 focus:ring-4 focus:ring-colors-secondary-300"
+                            onClick={scrollToTop}
+                            aria-label="Scroll to top"
+                        >
+                            <ArrowUpCircle className="w-6 h-6" />
+                        </motion.button>
+                    )}
+                </AnimatePresence>
             </div>
         </footer>
     );

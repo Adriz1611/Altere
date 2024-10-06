@@ -25,8 +25,8 @@ export default function Home() {
     <main className="py-3 overflow-hidden">
       <Cursor />
       <section
-        id="hero"
-        className="flex flex-col lg:flex-row justify-between items-center px-8 md:px-20 lg:px-60 py-20 relative h-screen mt-4 md:mt-8 "
+        id="home"
+        className="pt-20 flex flex-col lg:flex-row justify-between items-center px-8 md:px-20 lg:px-60 py-20 relative h-screen mt-4 md:mt-8"
       >
         {/* Apply motion to text */}
         <motion.h1
@@ -58,12 +58,21 @@ export default function Home() {
         </motion.div>
       </section>
 
-      <motion.section className="min-h-screen flex flex-col items-center w-full justify-center">
+      <section id="about" className="pt-20 min-h-screen flex flex-col items-center w-full justify-center">
         <About />
-      </motion.section>
-      <FoodRecyclingSlider />
-      <MarqueeSection />
-      <ContactUs />
+      </section>
+
+      <section id="food-recycling" className="pt-20">
+        <FoodRecyclingSlider />
+      </section>
+
+      <section id="impact" className="pt-20">
+        <MarqueeSection />
+      </section>
+
+      <section id="contact" className="pt-20">
+        <ContactUs />
+      </section>
     </main>
   );
 }
