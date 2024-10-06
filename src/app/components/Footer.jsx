@@ -1,15 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowUpCircle, Twitter, Facebook, Instagram, Linkedin, Mail, Phone, Send } from "lucide-react";
+import { ArrowUpCircle, Twitter, Facebook, Instagram, Linkedin, Mail, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Footer() {
     const [showScrollButton, setShowScrollButton] = useState(false);
     const [year, setYear] = useState(new Date().getFullYear());
-    const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' });
-    const [submitStatus, setSubmitStatus] = useState(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -22,20 +20,6 @@ export default function Footer() {
 
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-
-    const handleContactSubmit = (e) => {
-        e.preventDefault();
-        // Here you would typically send the form data to your server
-        console.log('Form submitted:', contactForm);
-        setSubmitStatus('success');
-        setContactForm({ name: '', email: '', message: '' });
-        setTimeout(() => setSubmitStatus(null), 3000);
-    };
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setContactForm(prev => ({ ...prev, [name]: value }));
     };
 
     return (
@@ -77,48 +61,19 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Contact Form */}
+                    {/* Mission and Vision */}
                     <div>
-                        <h3 className="text-lg font-semibold mb-4 text-gray-800">Contact Us</h3>
-                        <form onSubmit={handleContactSubmit} className="space-y-2">
-                            <input 
-                                type="text" 
-                                name="name"
-                                value={contactForm.name}
-                                onChange={handleInputChange}
-                                placeholder="Your Name" 
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-colors-secondary-500"
-                                required
-                            />
-                            <input 
-                                type="email" 
-                                name="email"
-                                value={contactForm.email}
-                                onChange={handleInputChange}
-                                placeholder="Your Email" 
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-colors-secondary-500"
-                                required
-                            />
-                            <textarea 
-                                name="message"
-                                value={contactForm.message}
-                                onChange={handleInputChange}
-                                placeholder="Your Message" 
-                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-colors-secondary-500"
-                                rows="3"
-                                required
-                            ></textarea>
-                            <button 
-                                type="submit" 
-                                className="w-full px-4 py-2 bg-colors-secondary-500 text-white rounded-md hover:bg-colors-secondary-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-colors-secondary-300 flex items-center justify-center"
-                            >
-                                <Send size={16} className="mr-2" />
-                                Send Message
-                            </button>
-                        </form>
-                        {submitStatus === 'success' && (
-                            <p className="mt-2 text-green-600 text-sm">Message sent successfully!</p>
-                        )}
+                        <h3 className="text-lg font-semibold mb-4 text-gray-800">Our Purpose</h3>
+                        <div className="space-y-4">
+                            <div>
+                                <h4 className="font-medium text-gray-700">Mission</h4>
+                                <p className="text-sm text-gray-600">To revolutionize waste management through innovative solutions, promoting sustainability and environmental responsibility.</p>
+                            </div>
+                            <div>
+                                <h4 className="font-medium text-gray-700">Vision</h4>
+                                <p className="text-sm text-gray-600">A world where waste is minimized, resources are conserved, and communities thrive in a cleaner, healthier environment.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
