@@ -35,9 +35,8 @@ export default function Home() {
           animate="visible"
           variants={textVariants}
         >
-          Waste is a<br />
-          Resource in <br /> the wrong
-          <br /> place
+          It's all about<br />
+          Circularity 
         </motion.h1>
 
         {/* Animate the background image to enter from the right */}

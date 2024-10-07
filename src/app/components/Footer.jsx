@@ -52,14 +52,6 @@ export default function Footer() {
                     </div>
 
                     {/* Legal */}
-                    <div>
-                        <h3 className="text-lg font-semibold mb-4 text-gray-800">Legal</h3>
-                        <ul className="space-y-2">
-                            <li><a href="#" className="text-gray-600 hover:text-colors-secondary-500 transition">Privacy Policy</a></li>
-                            <li><a href="#" className="text-gray-600 hover:text-colors-secondary-500 transition">Terms of Service</a></li>
-                            <li><a href="#" className="text-gray-600 hover:text-colors-secondary-500 transition">Cookie Policy</a></li>
-                        </ul>
-                    </div>
 
                     {/* Mission and Vision */}
                     <div>
@@ -88,8 +80,6 @@ export default function Footer() {
                     <div className="flex space-x-4">
                         {[
                             { Icon: Twitter, href: "https://twitter.com" },
-                            { Icon: Facebook, href: "https://facebook.com" },
-                            { Icon: Instagram, href: "https://instagram.com" },
                             { Icon: Linkedin, href: "https://linkedin.com" }
                         ].map(({ Icon, href }, index) => (
                             <a

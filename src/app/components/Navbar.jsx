@@ -8,6 +8,7 @@ const Navlinks = [
     { name: "Home", link: "home" },
     { name: "About", link: "about" },
     { name: "Food Recycling", link: "food-recycling" },
+    { name: "Feed Manufacturing", link: "feed-manufacturing" },
     { name: "Impact", link: "impact" },
 ];
 
