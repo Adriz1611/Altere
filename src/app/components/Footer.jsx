@@ -25,11 +25,11 @@ export default function Footer() {
     return (
         <footer className="bg-gradient-to-t from-gray-100 to-white py-12 border-t border-gray-200 relative">
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     {/* Company Info */}
-                    <div className="flex flex-col items-center md:items-start">
-                        <Image src="/nav-log.png" alt="AlteRe Logo" width={130} height={30} className="mb-4" />
-                        <p className="text-sm text-gray-600 mb-2">Innovative solutions for a better future.</p>
+                    <div className="flex flex-col items-center md:items-start space-y-4">
+                        <Image src="/nav-log.png" alt="AlteRe Logo" width={130} height={30} />
+                        <p className="text-sm text-gray-600">Innovative solutions for a better future.</p>
                         <div className="flex items-center space-x-2 text-sm text-gray-600">
                             <Mail size={16} />
                             <a href="mailto:contact@altere.com" className="hover:underline">contact@altere.com</a>
@@ -41,9 +41,9 @@ export default function Footer() {
                     </div>
 
                     {/* Quick Links */}
-                    <div>
-                        <h3 className="text-lg font-semibold mb-4 text-gray-800">Quick Links</h3>
-                        <ul className="space-y-2">
+                    <div className="space-y-4">
+                        <h3 className="text-lg font-semibold text-gray-800">Quick Links</h3>
+                        <ul className="space-y-3">
                             <li><a href="#" className="text-gray-600 hover:text-colors-secondary-500 transition">Home</a></li>
                             <li><a href="#" className="text-gray-600 hover:text-colors-secondary-500 transition">About Us</a></li>
                             <li><a href="#" className="text-gray-600 hover:text-colors-secondary-500 transition">Services</a></li>
@@ -51,17 +51,15 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Legal */}
-
                     {/* Mission and Vision */}
-                    <div>
-                        <h3 className="text-lg font-semibold mb-4 text-gray-800">Our Purpose</h3>
+                    <div className="space-y-4">
+                        <h3 className="text-lg font-semibold text-gray-800">Our Purpose</h3>
                         <div className="space-y-4">
-                            <div>
+                            <div className="space-y-2">
                                 <h4 className="font-medium text-gray-700">Mission</h4>
                                 <p className="text-sm text-gray-600">To revolutionize waste management through innovative solutions, promoting sustainability and environmental responsibility.</p>
                             </div>
-                            <div>
+                            <div className="space-y-2">
                                 <h4 className="font-medium text-gray-700">Vision</h4>
                                 <p className="text-sm text-gray-600">A world where waste is minimized, resources are conserved, and communities thrive in a cleaner, healthier environment.</p>
                             </div>
@@ -70,7 +68,7 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Section */}
-                <div className="mt-8 pt-8 border-t border-gray-200 flex flex-col-reverse md:flex-row justify-between items-center">
+                <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col-reverse md:flex-row justify-between items-center">
                     <p className="text-sm text-gray-600 mt-4 md:mt-0">
                         © {year} AlteRe. All Rights Reserved. Designed by{" "}
                         <a href="#" className="text-colors-secondary-500 hover:underline">FireDevs</a>
