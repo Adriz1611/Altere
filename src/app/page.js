@@ -35,7 +35,7 @@ export default function Home() {
           animate="visible"
           variants={textVariants}
         >
-          It's all about<br />
+          It&apos;s all about<br />
           Circularity 
         </motion.h1>
 
