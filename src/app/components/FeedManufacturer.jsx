@@ -9,8 +9,8 @@ const FeedCard = ({ title, subtitle, imageSrc, description, feedingAdvice, benef
       <p className="text-gray-700 text-lg">{subtitle}</p>
     </div>
     <div className="p-6 space-y-6">
-      <div className="flex items-center space-x-6">
-        <div className="w-32 h-32 relative flex-shrink-0">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+        <div className="w-full h-48 md:h-32 relative">
           <Image
             src={imageSrc}
             alt={title}
@@ -19,7 +19,7 @@ const FeedCard = ({ title, subtitle, imageSrc, description, feedingAdvice, benef
             className="rounded-lg"
           />
         </div>
-        <p className="text-black text-xl flex-grow">{description}</p>
+        <p className="text-black text-xl md:col-span-2">{description}</p>
       </div>
       <div>
         <h3 className="font-semibold text-xl mb-2">Feeding Advice:</h3>
