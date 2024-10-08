@@ -35,7 +35,7 @@ const MarqueeSection = () => {
     return (
         <div className="w-full flex justify-center bg-white py-10 md:py-16">
             <div className="w-4/5 md:w-2/3 overflow-hidden">
-                <h2 className="text-colors-green-main text-center text-3xl md:text-5xl font-bold mb-6 md:mb-8">
+                <h2 className="text-3xl md:text-5xl font-extrabold text-colors-green-main text-center mb-6 md:mb-8">
                     IMPACT
                 </h2>
                 <div className="flex justify-center items-center h-24 md:h-32 relative">

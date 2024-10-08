@@ -1,16 +1,17 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { ArrowUpCircle, Twitter, Linkedin, Mail, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const QUICK_LINKS = [
-  { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About Us' },
-  { id: 'food-recycling', label: 'Food Recycling' },
-  { id: 'feed-manufacturing', label: 'Feed Manufacturing' },
-  { id: 'impact', label: 'Impact' },
+  { id: "home", label: "Home" },
+  { id: "about", label: "About Us" },
+  { id: "food-recycling", label: "Food Recycling" },
+  { id: "feed-manufacturing", label: "Feed Manufacturing" },
+  { id: "impact", label: "Impact" },
 ];
 
 const SOCIAL_LINKS = [
@@ -24,8 +25,8 @@ export default function Footer() {
 
   useEffect(() => {
     const handleScroll = () => setShowScrollButton(window.scrollY > 100);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
@@ -33,9 +34,9 @@ export default function Footer() {
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      const headerHeight = document.querySelector('header').offsetHeight;
+      const headerHeight = document.querySelector("header").offsetHeight;
       const sectionTop = section.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-      window.scrollTo({ top: sectionTop, behavior: 'smooth' });
+      window.scrollTo({ top: sectionTop, behavior: "smooth" });
     }
   };
 
@@ -47,18 +48,20 @@ export default function Footer() {
             <Image src="/nav-log.png" alt="AlteRe Logo" width={130} height={30} />
             <p className="text-sm text-gray-600">Innovative solutions for a better future.</p>
             {[
-              { Icon: Mail, href: "mailto:contact@altere.com", text: "contact@altere.com" },
-              { Icon: Phone, href: "tel:+1234567890", text: "+1 (234) 567-890" },
+              { Icon: Mail, href: "mailto:sreyance@altere.in", text: "sreyance@altere.in" },
+              { Icon: Phone, href: "tel:+91 8876987246", text: "+91 8876987246" },
             ].map(({ Icon, href, text }) => (
               <div key={href} className="flex items-center space-x-2 text-sm text-gray-600">
                 <Icon size={16} />
-                <a href={href} className="hover:underline">{text}</a>
+                <a href={href} className="hover:underline">
+                  {text}
+                </a>
               </div>
             ))}
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-gray-800">Quick Links</h3>
+            <h3 className="text-lg font-bold text-colors-green-main">Quick Links</h3>
             <ul className="space-y-3">
               {QUICK_LINKS.map(({ id, label }) => (
                 <li key={id}>
@@ -74,13 +77,21 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-gray-800">Our Purpose</h3>
+            <h3 className="text-lg font-bold text-colors-green-main">Our Purpose</h3>
             {[
-              { title: "Mission", content: "To revolutionize waste management through innovative solutions, promoting sustainability and environmental responsibility." },
-              { title: "Vision", content: "A world where waste is minimized, resources are conserved, and communities thrive in a cleaner, healthier environment." },
+              {
+                title: "Mission",
+                content:
+                  "To revolutionize waste management through innovative solutions, promoting sustainability and environmental responsibility.",
+              },
+              {
+                title: "Vision",
+                content:
+                  "A world where waste is minimized, resources are conserved, and communities thrive in a cleaner, healthier environment.",
+              },
             ].map(({ title, content }) => (
               <div key={title} className="space-y-2">
-                <h4 className="font-medium text-gray-700">{title}</h4>
+                <h4 className="font-medium text-colors-green-main">{title}</h4>
                 <p className="text-sm text-gray-600">{content}</p>
               </div>
             ))}
@@ -90,9 +101,18 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col-reverse md:flex-row justify-between items-center">
           <p className="text-sm text-gray-600 mt-4 md:mt-0">
             © {year} AlteRe. All Rights Reserved. Designed by{" "}
-            <a href="#" className="text-colors-secondary-500 hover:underline">FireDevs</a>
+            <Link
+              href="#"
+              className="text-colors-green-main font-bold hover:underline"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = "mailto:firedevsfreelance@gmail.com";
+              }}
+            >
+              FireDevs
+            </Link>
           </p>
-          
+
           <div className="flex space-x-4">
             {SOCIAL_LINKS.map(({ Icon, href }, index) => (
               <a
