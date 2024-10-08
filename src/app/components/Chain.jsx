@@ -69,7 +69,7 @@ export default function InteractiveFoodRecyclingSection() {
           className="mt-16 text-center"
         >
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Experience the future of food waste management with AlteRe's innovative solutions.
+            Experience the future of food waste management with AlteRe&apos;s innovative solutions.
             Our comprehensive approach ensures maximum efficiency and environmental benefit.
           </p>
         </motion.div>
