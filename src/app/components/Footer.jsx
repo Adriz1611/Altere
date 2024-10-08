@@ -14,8 +14,8 @@ const QUICK_LINKS = [
 ];
 
 const SOCIAL_LINKS = [
-  { Icon: Twitter, href: "https://twitter.com" },
-  { Icon: Linkedin, href: "https://linkedin.com" },
+  { Icon: Twitter, href: "https://x.com/altere_" },
+  { Icon: Linkedin, href: "https://www.linkedin.com/company/alterein/" },
 ];
 
 export default function Footer() {

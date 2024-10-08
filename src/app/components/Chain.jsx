@@ -1,16 +1,18 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { Recycle, DollarSign, FileSearch, ShieldCheck, Leaf, BarChart3 } from 'lucide-react';
 
 export default function InteractiveFoodRecyclingSection() {
   const [activeFeature, setActiveFeature] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const ref = React.useRef(null);
+  const isInView = useInView(ref);
 
   useEffect(() => {
-    setIsVisible(true);
-  }, []);
+    setIsVisible(isInView);
+  }, [isInView]);
 
   const features = [
     { title: "Landfill Diversion", icon: Recycle, color: "text-emerald-500", bgColor: "bg-emerald-100" },
@@ -22,7 +24,7 @@ export default function InteractiveFoodRecyclingSection() {
   ];
 
   return (
-    <section className="w-full py-12 md:py-20 bg-white">
+    <section ref={ref} className="w-full py-12 md:py-20 bg-white font-main">
       <div className="container mx-auto px-4 md:px-6 w-[95%] md:w-[90%]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -30,8 +32,8 @@ export default function InteractiveFoodRecyclingSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-extrabold text-gray-900 mb-6">Revolutionizing Food Recycling</h2>
-          <p className="text-2xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-colors-green-main mb-6">Revolutionizing Food Recycling</h2>
+          <p className="text-xl text-black max-w-3xl mx-auto">
             Discover how AlteRe is transforming food waste management with cutting-edge solutions.
           </p>
         </motion.div>
@@ -40,24 +42,36 @@ export default function InteractiveFoodRecyclingSection() {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20 }}
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 20, scale: 1 }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className={`p-8 rounded-lg ${feature.bgColor} cursor-pointer transition-all duration-300 hover:shadow-xl group`}
+              className={`p-8 rounded-lg ${feature.bgColor} cursor-pointer transition-all duration-300 hover:shadow-2xl hover:scale-105 group relative ${activeFeature === index ? "shadow-lg scale-105" : ""}`}
               onClick={() => setActiveFeature(index)}
             >
               <div className="flex items-center mb-6">
-                <div className={`relative ${feature.color} mr-4 transition-all duration-300 group-hover:scale-110`}>
+                <motion.div 
+                  className={`relative ${feature.color} mr-4 transition-all duration-300 group-hover:scale-110`}
+                  whileHover={{ scale: 1.2, rotate: 10 }}
+                >
                   <feature.icon className="h-10 w-10" />
-                  <div className={`absolute inset-0 ${feature.color} opacity-50 blur-lg transition-opacity duration-300 opacity-0 group-hover:opacity-75`}>
+                  <motion.div
+                    className={`absolute inset-0 ${feature.color} blur-lg opacity-0 group-hover:opacity-100`}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileHover={{ opacity: 1, scale: 1.2 }}
+                  >
                     <feature.icon className="h-10 w-10" />
-                  </div>
-                </div>
-                <h3 className={`text-2xl font-semibold ${feature.color}`}>{feature.title}</h3>
+                  </motion.div>
+                </motion.div>
+                <h3 className={`text-xl font-bold ${feature.color}`}>{feature.title}</h3>
               </div>
-              <p className="text-lg text-gray-700">
+              <motion.p
+                className="text-xl text-black"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3 }}
+              >
                 {getFeatureDescription(feature.title)}
-              </p>
+              </motion.p>
             </motion.div>
           ))}
         </div>
@@ -68,7 +82,7 @@ export default function InteractiveFoodRecyclingSection() {
           transition={{ delay: 0.7, duration: 0.5 }}
           className="mt-16 text-center"
         >
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-black max-w-3xl mx-auto">
             Experience the future of food waste management with AlteRe&apos;s innovative solutions.
             Our comprehensive approach ensures maximum efficiency and environmental benefit.
           </p>

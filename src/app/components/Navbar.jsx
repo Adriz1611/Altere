@@ -43,7 +43,7 @@ export default function Navbar() {
 
     return (
         <header className="shadow-md w-full fixed z-50 bg-white ">
-            <nav className="flex justify-between items-center mx-4 lg:mx-64 py-4">
+            <nav className="flex justify-between items-center mx-4 lg:mx-36 py-4">
                 {/* Logo */}
                 <Image src="/nav-log.png" alt="AlteRe Logo" width={130} height={0} />
 
