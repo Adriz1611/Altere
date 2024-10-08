@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { About } from "@/app/components/About2";
 import About1 from "./components/About1";
 import FoodRecyclingSlider from "@/app/components/Chain";
-// import Cursor from "./components/Cursor";
+import Cursor from "./components/Cursor";
 import MarqueeSection from "@/app/components/Marquee";
 import ContactUs from "./components/ContactUS";
 import FeedManufacturer from "./components/FeedManufacturer";
@@ -25,7 +25,7 @@ const imageVariants = {
 export default function Home() {
   return (
     <main className="py-3 overflow-hidden">
-      {/* <Cursor /> */}
+      <Cursor />
       <section
         id="home"
         className="pt-20 flex flex-col lg:flex-row justify-between items-center px-8 md:px-20 lg:px-60 py-20 relative h-screen mt-4 md:mt-8"
