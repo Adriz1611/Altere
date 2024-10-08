@@ -8,6 +8,9 @@ const logos = [
     '/client-4.png',
     '/client-5.png',
     '/client-6.png',
+    '/client-7.png',
+    '/client-8.png',
+    '/client-9.png',
 ];
 
 const MarqueeSection = () => {
@@ -23,7 +26,7 @@ const MarqueeSection = () => {
 
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % logos.length);
-        }, 2000);
+        }, 1000);
 
         return () => clearInterval(interval);
     }, [isClient]);
