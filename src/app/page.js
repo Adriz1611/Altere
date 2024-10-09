@@ -10,6 +10,7 @@ import Cursor from "./components/Cursor";
 import MarqueeSection from "@/app/components/Marquee";
 import ContactUs from "./components/ContactUS";
 import FeedManufacturer from "./components/FeedManufacturer";
+import BorderedTeamCardComponent from "./components/Team"; // Import the Team component
 
 // Define motion variants for animations
 const textVariants = {
@@ -91,6 +92,11 @@ export default function Home() {
 
       <section id="impact" className="pt-20 md:pt-10">
         <MarqueeSection />
+      </section>
+
+      {/* Add the Team section here */}
+      <section id="team" className="pt-20 md:pt-10">
+        <BorderedTeamCardComponent />
       </section>
 
       <section id="contact" className="pt-20 md:pt-10">

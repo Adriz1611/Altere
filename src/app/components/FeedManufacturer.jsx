@@ -1,140 +1,113 @@
 "use client"
 
-import { ArrowRightIcon } from "lucide-react"
-import { motion } from "framer-motion"
+import { useEffect, useState } from 'react'
+import { CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react"
+import Image from "next/image"
+import { motion, AnimatePresence } from "framer-motion"
 
 export default function Component() {
+  const products = [
+    {
+      name: "AlteRe Bakery Meal",
+      image: "/FM1.jpeg",
+      benefits: [
+        "Very Palatable",
+        "High Fermentable Energy",
+        "Excellent Digestibility"
+      ]
+    },
+    {
+      name: "AlteRe Savory Meal",
+      image: "/FM2.jpeg",
+      benefits: [
+        "Enhances the energy density of diets",
+        "Very high energy content",
+        "High in starch",
+        "Excellent digestibility"
+      ]
+    }
+  ]
+
+  const [currentIndex, setCurrentIndex] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % products.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [])
+
+  const nextSlide = () => setCurrentIndex((prevIndex) => (prevIndex + 1) % products.length)
+  const prevSlide = () => setCurrentIndex((prevIndex) => (prevIndex - 1 + products.length) % products.length)
+
   return (
-    <div className="max-w-7xl mx-auto p-6">
-      <motion.h1
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-4xl font-bold text-center mb-10"
-        style={{ color: 'rgb(78 109 82 / 1)' }}
-      >
-        AlteRe Feed: Revolutionizing Feed Formulation
-      </motion.h1>
-      <div className="grid md:grid-cols-2 gap-12">
-        <ProductCard
-          title="AlteRe Bakery Meal"
-          description="High-energy cooked feed for cereal grain replacement"
-          imageSrc="/FM1.jpeg"
-          imageAlt="AlteRe Bakery Meal"
-          content="Bakery Meal is a high-energy cooked feed that is an ideal replacement for cereal grain suitable for feeding cattle. It will increase the energy density of all diets when included making it an excellent feed for high-yielding dairy, fattening pigs."
-          feedingAdvice="Up to 15% inclusion of DM intake"
-          benefits={[
-            "Very Palatable",
-            "High Fermentable Energy",
-            "Excellent Digestibility"
-          ]}
-          color="blue"
-        />
-        <ProductCard
-          title="AlteRe Savory Meal"
-          description="High-energy content for enhanced diet density"
-          imageSrc="/FM2.jpeg"
-          imageAlt="AlteRe Savory Meal"
-          content="Cooked Chips/snacks have a very high energy content that will enhance the energy density of all diets they are included in. They have a high starch content and their cooking gives them excellent digestibility for pigs. This makes them an excellent feed for finishing diets for pigs."
-          feedingAdvice="Up to 15% inclusion of DM intake"
-          benefits={[
-            "Enhances the energy density of diets",
-            "Very high energy content",
-            "High in starch",
-            "Excellent digestibility"
-          ]}
-          color="orange"
-        />
+    <div className="relative w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-green-50 to-blue-50">
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center opacity-10"
+        style={{ backgroundImage: "url('/cow-background.jpg')" }}
+      ></div>
+      
+      <div className="relative z-10 w-full max-w-5xl mx-auto p-4 sm:p-8">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl sm:text-5xl font-bold text-center mb-8 sm:mb-12 text-green-800 drop-shadow-lg"
+        >
+          AlteRe Feed: Revolutionizing Feed Formulation
+        </motion.h1>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.5 }}
+            className="bg-white rounded-2xl shadow-2xl overflow-hidden border-2 border-green-200"
+          >
+            <div className="p-4 sm:p-8 bg-gradient-to-br from-green-50 via-white to-blue-50">
+              <div className="pb-4 sm:pb-6">
+                <span className="px-3 py-1 sm:px-4 sm:py-2 text-sm font-semibold text-green-800 bg-green-100 rounded-full mx-auto mb-3 sm:mb-4 block w-fit shadow-md">Premium Product</span>
+                <h2 className="text-3xl sm:text-4xl font-bold text-center text-green-800 mb-2">
+                  {products[currentIndex].name}
+                </h2>
+              </div>
+              <div className="flex flex-col lg:flex-row items-center justify-between space-y-6 lg:space-y-0 lg:space-x-8">
+                <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 overflow-hidden rounded-2xl shadow-xl">
+                  <Image
+                    src={products[currentIndex].image}
+                    alt={products[currentIndex].name}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </div>
+                <ul className="space-y-3 sm:space-y-4 w-full max-w-md">
+                  {products[currentIndex].benefits.map((benefit, benefitIndex) => (
+                    <motion.li
+                      key={benefitIndex}
+                      className="flex items-center space-x-3 bg-white/90 backdrop-blur-sm rounded-lg p-3 sm:p-4 shadow-lg border border-green-100"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3, delay: benefitIndex * 0.1 }}
+                    >
+                      <CheckCircle2 className="h-5 w-5 sm:h-6 sm:w-6 text-green-600 flex-shrink-0" />
+                      <span className="text-sm sm:text-base font-medium text-gray-700">{benefit}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+        <div className="flex justify-center mt-6 sm:mt-8 space-x-4">
+          <button onClick={prevSlide} className="p-2 rounded-full bg-green-800 text-white hover:bg-green-700 transition-colors shadow-lg">
+            <ChevronLeft size={24} />
+          </button>
+          <button onClick={nextSlide} className="p-2 rounded-full bg-green-800 text-white hover:bg-green-700 transition-colors shadow-lg">
+            <ChevronRight size={24} />
+          </button>
+        </div>
       </div>
     </div>
-  )
-}
-
-function ProductCard({
-  title,
-  description,
-  imageSrc,
-  imageAlt,
-  content,
-  feedingAdvice,
-  benefits,
-  color
-}) {
-  const colorClasses = {
-    blue: "from-blue-50 to-white border-blue-200",
-    orange: "from-orange-50 to-white border-orange-200"
-  }
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-      className={`rounded-lg overflow-hidden shadow-lg border ${colorClasses[color]} bg-gradient-to-br p-6 sm:p-8`}
-    >
-      <div className="space-y-6">
-        <motion.h2
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.3 }}
-          className="text-2xl sm:text-3xl font-bold mb-2 text-gray-800"
-        >
-          {title}
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: -5 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.3 }}
-          className="text-base sm:text-lg font-medium mb-4 text-gray-600"
-        >
-          {description}
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, x: -10 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.4, duration: 0.3 }}
-          className="grid grid-cols-1 sm:grid-cols-[auto,1fr] gap-4 sm:gap-6 items-start mb-6"
-        >
-          <div className="sm:pr-4">
-            <img src={imageSrc} alt={imageAlt} className="w-full sm:w-48 h-40 sm:h-36 object-cover rounded-md shadow-md mx-auto" />
-          </div>
-          <div className="flex flex-col justify-center">
-            <p className="text-base leading-relaxed text-gray-700">{content}</p>
-          </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.3 }}
-          className="mb-4"
-        >
-          <h3 className="text-lg sm:text-xl font-semibold mb-2 text-gray-800">Feeding Advice:</h3>
-          <span className={`inline-block px-4 py-2 rounded-full text-sm sm:text-base font-medium ${color === 'blue' ? 'bg-blue-100 text-blue-800' : 'bg-orange-100 text-orange-800'}`}>
-            {feedingAdvice}
-          </span>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.3 }}
-        >
-          <h3 className="text-lg sm:text-xl font-semibold mb-3 text-gray-800">Benefits:</h3>
-          <ul className="space-y-2">
-            {benefits.map((benefit, index) => (
-              <motion.li
-                key={index}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.7 + index * 0.1, duration: 0.3 }}
-                className="flex items-center text-sm sm:text-base text-gray-700"
-              >
-                <ArrowRightIcon className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 text-green-600" />
-                {benefit}
-              </motion.li>
-            ))}
-          </ul>
-        </motion.div>
-      </div>
-    </motion.div>
   )
 }

@@ -67,6 +67,7 @@ body, * {
         --accent-800: #03633d;
         --accent-900: #02311e;
         --accent-950: #01190f;
+        --radius: 0.5rem;
 
     }
 
