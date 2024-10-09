@@ -12,6 +12,7 @@ const QUICK_LINKS = [
   { id: "food-recycling", label: "Food Recycling" },
   { id: "feed-manufacturing", label: "Feed Manufacturing" },
   { id: "impact", label: "Impact" },
+  { id: "team", label: "Team" }, // Add this line
 ];
 
 const SOCIAL_LINKS = [

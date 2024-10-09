@@ -10,6 +10,7 @@ const Navlinks = [
     { name: "Food Recycling", link: "food-recycling" },
     { name: "Feed Manufacturing", link: "feed-manufacturing" },
     { name: "Impact", link: "impact" },
+    { name: "Team", link: "team" }, // Add this line
 ];
 
 export default function Navbar() {
