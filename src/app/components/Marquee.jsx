@@ -8,6 +8,9 @@ const logos = [
     '/client-4.png',
     '/client-5.png',
     '/client-6.png',
+    '/client-7.png',
+    '/client-8.png',
+    '/client-9.png',
 ];
 
 const MarqueeSection = () => {
@@ -23,7 +26,7 @@ const MarqueeSection = () => {
 
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % logos.length);
-        }, 2000);
+        }, 1000);
 
         return () => clearInterval(interval);
     }, [isClient]);
@@ -35,7 +38,7 @@ const MarqueeSection = () => {
     return (
         <div className="w-full flex justify-center bg-white py-10 md:py-16">
             <div className="w-4/5 md:w-2/3 overflow-hidden">
-                <h2 className="text-colors-green-main text-center text-3xl md:text-5xl font-bold mb-6 md:mb-8">
+                <h2 className="text-3xl md:text-5xl font-extrabold text-colors-green-main text-center mb-6 md:mb-8">
                     IMPACT
                 </h2>
                 <div className="flex justify-center items-center h-24 md:h-32 relative">

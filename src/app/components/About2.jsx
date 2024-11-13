@@ -20,7 +20,7 @@ export const About = () => {
             whileInView="visible"
             viewport={{ once: true }}
             variants={variants}
-            className="w-[90%] md:w-[80%] min-h-screen bg-gray-500 flex flex-col md:flex-row items-center justify-center mx-auto">
+            className="w-[90%] md:w-[80%] bg-white flex flex-col md:flex-row items-center justify-center mx-auto">
             <Image 
                 src="/about-bg.png" 
                 alt="about" 
@@ -31,7 +31,7 @@ export const About = () => {
             <div className="w-full md:w-[50%] px-5 py-10 md:py-20 flex flex-col gap-5 border bg-slate-200">
                 <h2 className="font-main text-xl md:text-lg">Re-imagine food waste</h2>
                 <h1 className="font-main text-2xl md:text-3xl">Transforming Waste into Valuable Resources</h1>
-                <p className="font-main text-sm md:text-base">
+                <p className="font-main text-xl md:text-base">
                     Our innovative solution not only addresses the issue of food waste but also delivers benefits to
                     food companies. By diverting surplus food from landfill, companies can significantly reduce their
                     disposal costs, adding to their bottom line and achieving their sustainability goals.
