@@ -28,7 +28,6 @@ export default function Home() {
         id="hero"
         className="flex flex-col lg:flex-row justify-between items-center px-8 md:px-20 lg:px-60 py-20 relative h-screen mt-4 md:mt-8 "
       >
-        {/* Apply motion to text */}
         <motion.h1
           className="text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] font-bold w-full md:w-3/4 lg:w-2/4 font-heading leading-tight md:leading-[75px] lg:leading-[89px] text-black"
           initial="hidden"
@@ -40,7 +39,6 @@ export default function Home() {
           <br /> place
         </motion.h1>
 
-        {/* Animate the background image to enter from the right */}
         <motion.div
           className="absolute inset-0 z-[-1]"
           initial="hidden"
@@ -52,8 +50,7 @@ export default function Home() {
             alt="Waste Management Background"
             layout="fill"
             objectFit="cover"
-            quality={100}
-            className="object-cover"
+
           />
         </motion.div>
       </section>
