@@ -54,7 +54,7 @@ const About = () => {
               width={400}
               height={400}
               layout="responsive"
-              className="grayscale"
+              className="saturate-10"
             />
           </motion.div>
           <div className="w-full lg:w-2/3 space-y-6">

@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/app/components/About1.jsx",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1731684567492,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1731684603081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n               alt=\"Map\"\n               width={400}\n               height={400}\n               layout=\"responsive\"\n-              className=\"\"\n+              className=\"sa\"\n             />\n           </motion.div>\n           <div className=\"w-full lg:w-2/3 space-y-6\">\n             <motion.h2\n"
+                },
+                {
+                    "date": 1731684637047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n               alt=\"Map\"\n               width={400}\n               height={400}\n               layout=\"responsive\"\n-              className=\"sa\"\n+              className=\"saturate-50\"\n             />\n           </motion.div>\n           <div className=\"w-full lg:w-2/3 space-y-6\">\n             <motion.h2\n"
+                },
+                {
+                    "date": 1731684647006,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n               alt=\"Map\"\n               width={400}\n               height={400}\n               layout=\"responsive\"\n-              className=\"saturate-50\"\n+              className=\"saturate-40\"\n             />\n           </motion.div>\n           <div className=\"w-full lg:w-2/3 space-y-6\">\n             <motion.h2\n"
+                },
+                {
+                    "date": 1731687659567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n               alt=\"Map\"\n               width={400}\n               height={400}\n               layout=\"responsive\"\n-              className=\"saturate-40\"\n+              className=\"saturate-50\"\n             />\n           </motion.div>\n           <div className=\"w-full lg:w-2/3 space-y-6\">\n             <motion.h2\n"
+                },
+                {
+                    "date": 1731687680507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n               alt=\"Map\"\n               width={400}\n               height={400}\n               layout=\"responsive\"\n-              className=\"saturate-50\"\n+              className=\"saturate-10\"\n             />\n           </motion.div>\n           <div className=\"w-full lg:w-2/3 space-y-6\">\n             <motion.h2\n"
+                }
+            ],
+            "date": 1731684567492,
+            "name": "Commit-0",
+            "content": "import React from 'react';\nimport Image from 'next/image';\nimport { motion, useInView } from 'framer-motion';\nimport { useRef } from 'react';\n\nconst About = () => {\n  const ref = useRef(null);\n  const isInView = useInView(ref, { triggerOnce: true, threshold: 0.1 });  // 'triggerOnce' ensures the animation only triggers once\n\n  const containerVariants = {\n    hidden: { opacity: 0 },\n    visible: { \n      opacity: 1,\n      transition: { \n        duration: 0.5,\n        staggerChildren: 0.2\n      }\n    }\n  };\n\n  const itemVariants = {\n    hidden: { opacity: 0, y: 20 },\n    visible: { \n      opacity: 1, \n      y: 0,\n      transition: { duration: 0.5 }\n    }\n  };\n\n  return (\n    <div className=\"flex items-center justify-center bg-white p-8 font-main\">\n      <motion.div \n        ref={ref}\n        variants={containerVariants}\n        initial=\"hidden\"\n        animate={isInView ? \"visible\" : \"hidden\"}  // Trigger animation on scroll into view\n        className=\"max-w-7xl w-full border border-gray-300 border-dashed p-12 flex flex-col items-center\"\n      >\n        <motion.div variants={itemVariants} className=\"w-full mb-12\">\n          <Image\n            src=\"/nav-log.png\"\n            alt=\"AlteRe Logo\"\n            width={200}\n            height={67}\n            className=\"mx-auto\"\n          />\n        </motion.div>\n        \n        <div className=\"flex flex-col lg:flex-row items-center lg:items-start gap-12\">\n          <motion.div variants={itemVariants} className=\"w-full lg:w-1/3\">\n            <Image\n              src=\"/map.png\"\n              alt=\"Map\"\n              width={400}\n              height={400}\n              layout=\"responsive\"\n              className=\"\"\n            />\n          </motion.div>\n          <div className=\"w-full lg:w-2/3 space-y-6\">\n            <motion.h2\n              variants={itemVariants}\n              className=\"text-3xl font-semibold text-gray-800 mb-4\"\n            >\n              Altere Innovations Pvt Ltd\n            </motion.h2>\n            <motion.p\n              variants={itemVariants}\n              className=\"text-xl text-gray-600 leading-relaxed\"\n            >\n              AlteRe is a sustainability startup with a mission to revolutionize\n              food loss and waste reduction through a circular solution. Our\n              innovative approach aims to divert surplus food from landfills and\n              reintegrate it into the food chain. By transforming food waste into\n              alternative nutrition for animals, we create a sustainable and\n              resourceful solution.\n            </motion.p>\n            <motion.p\n              variants={itemVariants}\n              className=\"text-xl text-gray-600 leading-relaxed\"\n            >\n              Our goal is to contribute to a more efficient and environmentally \n              sustainable food system while addressing the challenges of food \n              waste management and promoting the well-being of all individuals.\n            </motion.p>\n          </div>\n        </div>\n      </motion.div>\n    </div>\n  );\n};\n\nexport default About;\n"
+        }
+    ]
+}
