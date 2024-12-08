@@ -1,6 +1,4 @@
 import "./globals.css";
-import Navbar from "@/app/components/Navbar";
-import Footer from "./components/Footer";
 import { Ubuntu } from "next/font/google";
 import { Jost } from "next/font/google";
 
@@ -26,9 +24,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${ubuntu.variable} ${jost.variable}`}>
-        <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   );
