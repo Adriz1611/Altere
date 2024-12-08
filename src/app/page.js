@@ -51,7 +51,9 @@ export default function Home() {
             animate="visible"
             variants={textVariants}
           >
-            We make the agri-industry more sustainable by <br></br> maximising
+
+              //intentional error
+            'We make the agri-industry more *sustainable 'by <br></br> maximising
             resource use
           </motion.p>
         </div>
