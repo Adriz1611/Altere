@@ -25,7 +25,7 @@ const imageVariants = {
 
 export default function Home() {
     return (
-        <main className="py-3 overflow-hidden">
+        <main className="py-4 overflow-hidden">
             {/* <Cursor /> */}
             {/* <section
         id="home"
