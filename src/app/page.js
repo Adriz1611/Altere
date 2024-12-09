@@ -26,8 +26,8 @@ const imageVariants = {
 export default function Home() {
     return (
         <main className="py-4 overflow-hidden">
-            {/* <Cursor /> */}
-            {/* <section
+            <Cursor /> 
+            <section
         id="home"
         className="pt-20 flex flex-col lg:flex-row justify-between items-center px-8 md:px-20 lg:px-60 py-20 relative h-screen mt-4 md:mt-8"
       >
@@ -69,9 +69,9 @@ export default function Home() {
             className="object-cover"
           />
         </motion.div>
-      </section> */}
+      </section> 
 
-            {/* <section id="about" className="pt-10 md:pt-20">
+            <section id="about" className="pt-10 md:pt-20">
         <About1 />
       </section>
 
@@ -97,7 +97,7 @@ export default function Home() {
 
       <section id="contact" className="pt-20 md:pt-10">
         <ContactUs />
-      </section> */}
+      </section> 
         </main>
     );
 }
